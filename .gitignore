@@ -2,3 +2,8 @@
 
 MANIFEST
 dist/
+.idea/misc.xml
+.idea/modules.xml
+.idea/python-bitcoinrpc.iml
+.idea/vcs.xml
+.idea/workspace.xml
