@@ -51,7 +51,7 @@ USER_AGENT = "AuthServiceProxy/0.1"
 
 HTTP_TIMEOUT = 30
 
-log = logging.getLogger("BitcoinRPC")
+log = logging.getLogger("EthereumRPC")
 
 class JSONRPCException(Exception):
     def __init__(self, rpc_error):
@@ -137,7 +137,7 @@ class AuthServiceProxy(object):
         self.__conn.sock.settimeout(self.__timeout)
 
         response = self._get_response()
-        if response.get('error') is not None:
+        if 'error' in response and response.get('error') is not None:
             raise JSONRPCException(response['error'])
         elif 'result' not in response:
             raise JSONRPCException({
