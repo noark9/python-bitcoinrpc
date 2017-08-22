@@ -125,7 +125,7 @@ class AuthServiceProxy(object):
 
         log.debug("-%s-> %s %s"%(AuthServiceProxy.__id_count, self.__service_name,
                                  json.dumps(args, default=EncodeDecimal)))
-        postdata = json.dumps({'version': '1.1',
+        postdata = json.dumps({'jsonrpc': '2.0',
                                'method': self.__service_name,
                                'params': args,
                                'id': AuthServiceProxy.__id_count}, default=EncodeDecimal)
